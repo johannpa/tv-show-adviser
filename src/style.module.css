@@ -6,16 +6,13 @@
 }
 
 .header {
-  flex: 1;
-  background-color: red;
+  flex: 2;
 }
 
 .tv_show_detail {
-  flex: 2;
-  background-color: blue;
+  flex: 4;
 }
 
-.recommendations {
-  flex: 1;
-  background-color: green;
+.recommended_shows {
+  flex: 2;
 }
