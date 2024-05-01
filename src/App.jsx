@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./global.css";
 import style from "./style.module.css";
 import { TVShowAPI } from "./api/tv-show";
+import { BACKDROP_BASE_URL } from "./api/config";
 
 TVShowAPI.fetchPopulars();
 
@@ -21,7 +22,12 @@ export function App() {
   console.log("***", currentTVShow);
 
   return (
-    <div className={style.main_container}>
+    <div
+      className={style.main_container}
+      style={{
+        background: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("${BACKDROP_BASE_URL}${currentTVShow.backdrop_path}") no-repeat center / cover`,
+      }}
+    >
       <div className={style.header}>
         <div className="row">
           <div className="col-4">
