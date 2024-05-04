@@ -6,6 +6,7 @@ import { BACKDROP_BASE_URL } from "./api/config";
 import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
 import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png";
+import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
 
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
@@ -48,7 +49,9 @@ export function App() {
       <div className={style.tv_show_detail}>
         {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
-      <div className={style.recommended_shows}>Recommended tv shows</div>
+      <div className={style.recommended_shows}>
+        {currentTVShow && <TVShowListItem tvShow={currentTVShow} />}
+      </div>
     </div>
   );
 }
