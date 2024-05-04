@@ -4,6 +4,8 @@ import style from "./style.module.css";
 import { TVShowAPI } from "./api/tv-show";
 import { BACKDROP_BASE_URL } from "./api/config";
 import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
+import { Logo } from "./components/Logo/Logo";
+import logo from "./assets/images/logo.png";
 
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
@@ -32,8 +34,11 @@ export function App() {
       <div className={style.header}>
         <div className="row">
           <div className="col-4">
-            <div>Logo</div>
-            <div>Subtitle</div>
+            <Logo
+              image={logo}
+              title="Watowatch"
+              subtitle="Find a show you may like"
+            />
           </div>
           <div className="col-sm-12 col-md-4">
             <input style={{ width: "100%" }} type="text" />
@@ -41,7 +46,7 @@ export function App() {
         </div>
       </div>
       <div className={style.tv_show_detail}>
-      {currentTVShow && <TVShowDetail tvShow={currentTVShow}/>}
+        {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
       <div className={style.recommended_shows}>Recommended tv shows</div>
     </div>
