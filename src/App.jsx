@@ -3,6 +3,7 @@ import "./global.css";
 import style from "./style.module.css";
 import { TVShowAPI } from "./api/tv-show";
 import { BACKDROP_BASE_URL } from "./api/config";
+import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
 
 TVShowAPI.fetchPopulars();
 
@@ -41,7 +42,7 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className={style.tv_show_detail}>Detail</div>
+      <div className={style.tv_show_detail}><TVShowDetail/></div>
       <div className={style.recommended_shows}>Recommended tv shows</div>
     </div>
   );
