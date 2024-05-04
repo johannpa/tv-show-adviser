@@ -21,7 +21,9 @@ export function App() {
     fetchPopulars();
   }, []);
 
-  console.log("***", currentTVShow);
+  function setCurrentTVShowFromRecommendation(tvShow){
+    alert(JSON.stringify(tvShow));
+  }
 
   return (
     <div
@@ -50,7 +52,22 @@ export function App() {
         {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
       <div className={style.recommended_shows}>
-        {currentTVShow && <TVShowListItem tvShow={currentTVShow} />}
+        {currentTVShow && (
+          <>
+            <TVShowListItem
+              onClick={setCurrentTVShowFromRecommendation}
+              tvShow={currentTVShow}
+            />
+            <TVShowListItem
+              onClick={setCurrentTVShowFromRecommendation}
+              tvShow={currentTVShow}
+            />
+            <TVShowListItem
+              onClick={setCurrentTVShowFromRecommendation}
+              tvShow={currentTVShow}
+            />
+          </>
+        )}
       </div>
     </div>
   );
