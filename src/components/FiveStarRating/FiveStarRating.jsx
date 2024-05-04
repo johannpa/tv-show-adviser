@@ -1,5 +1,5 @@
 import s from "./style.module.css";
 
-export function FiveStarRating(props) {
-    return <div></div>
+export function FiveStarRating({ rating }) {
+    return <div>*****</div>
 }
