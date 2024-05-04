@@ -2,6 +2,7 @@ import s from "./style.module.css";
 import { StarFill, Star as StarEmpty, StarHalf } from "react-bootstrap-icons";
 
 export function FiveStarRating({ rating }) {
+
     const starList = [];
     const starFillCount = Math.floor(rating);
     const hasStarHalf = rating - starFillCount >= 0.5;
