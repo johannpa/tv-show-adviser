@@ -40,7 +40,7 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className={style.tv_show_detail}><TVShowDetail/></div>
+      <div className={style.tv_show_detail}><TVShowDetail tvShow={currentTVShow}/></div>
       <div className={style.recommended_shows}>Recommended tv shows</div>
     </div>
   );
