@@ -5,8 +5,6 @@ import { TVShowAPI } from "./api/tv-show";
 import { BACKDROP_BASE_URL } from "./api/config";
 import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
 
-TVShowAPI.fetchPopulars();
-
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
 
