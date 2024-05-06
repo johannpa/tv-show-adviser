@@ -8,10 +8,21 @@ import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png";
 import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
 
+TVShowAPI.fetchRecommendations(1402);
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
 
+  const [recommendationList, setrRcommendationList] = useState([]);
+  
+
   async function fetchPopulars() {
+    const populars = await TVShowAPI.fetchPopulars();
+    if (populars.length > 0) {
+      setCurrentTVShow(populars[0]);
+    }
+  }
+
+  async function fetchRecommendations(tvShowId) {
     const populars = await TVShowAPI.fetchPopulars();
     if (populars.length > 0) {
       setCurrentTVShow(populars[0]);
