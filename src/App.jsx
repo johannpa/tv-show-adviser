@@ -28,9 +28,16 @@ export function App() {
       setRecommendationList(recommendations.slice(0, 10));
     }
   }
+
   useEffect(() => {
     fetchPopulars();
   }, []);
+
+  useEffect(() => {
+    if(currentTVShow){
+      fetchRecommendations(currentTVShow.id);
+    }
+  }, [currentTVShow]);
 
   function setCurrentTVShowFromRecommendation(tvShow){
     alert(JSON.stringify(tvShow));
