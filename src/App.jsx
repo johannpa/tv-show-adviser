@@ -8,7 +8,6 @@ import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png";
 import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
 
-TVShowAPI.fetchRecommendations(1402);
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
 
@@ -42,6 +41,8 @@ export function App() {
   function setCurrentTVShowFromRecommendation(tvShow){
     alert(JSON.stringify(tvShow));
   }
+
+  console.log("***", recommendationList);
 
   return (
     <div
