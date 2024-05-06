@@ -12,7 +12,7 @@ TVShowAPI.fetchRecommendations(1402);
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
 
-  const [recommendationList, setrRcommendationList] = useState([]);
+  const [recommendationList, setRecommendationList] = useState([]);
   
 
   async function fetchPopulars() {
@@ -23,9 +23,9 @@ export function App() {
   }
 
   async function fetchRecommendations(tvShowId) {
-    const populars = await TVShowAPI.fetchPopulars();
-    if (populars.length > 0) {
-      setCurrentTVShow(populars[0]);
+    const recommendations = await TVShowAPI.fetchRecommendations(tvShowId);
+    if (recommendations.length > 0) {
+      setRecommendationList(recommendations.slice(0, 10));
     }
   }
   useEffect(() => {
