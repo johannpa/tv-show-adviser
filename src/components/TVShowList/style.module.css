@@ -1,0 +1,15 @@
+.title {
+    font-family: 'Roboto';
+    font-weight: 60px;
+    font-style: 20px;
+}
+
+.list {
+    display: flex;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.tv_show_list_item {
+
+}
