@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./global.css";
-import style from "./style.module.css";
+import s from "./style.module.css";
 import { TVShowAPI } from "./api/tv-show";
 import { BACKDROP_BASE_URL } from "./api/config";
 import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
@@ -47,14 +47,14 @@ export function App() {
 
   return (
     <div
-      className={style.main_container}
+      className={s.main_container}
       style={{
         background: currentTVShow
           ? `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("${BACKDROP_BASE_URL}${currentTVShow.backdrop_path}") no-repeat center / cover`
           : "black",
       }}
     >
-      <div className={style.header}>
+      <div className={s.header}>
         <div className="row">
           <div className="col-4">
             <Logo
@@ -68,11 +68,13 @@ export function App() {
           </div>
         </div>
       </div>
-      <div className={style.tv_show_detail}>
+      <div className={s.tv_show_details}>
         {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
-      <div className={style.recommended_shows}>
-        {currentTVShow && <TVShowList/>}
+      <div className={s.recommended_shows}>
+        {recommendationList && recommendationList.length > 0 && (
+          <TVShowList tvShowList={recommendationList} />
+        )}
       </div>
     </div>
   );
