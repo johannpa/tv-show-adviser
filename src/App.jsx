@@ -7,6 +7,7 @@ import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
 import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png";
 import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
+import { TVShowList } from "./components/TVShowList/TVShowList";
 
 export function App() {
   const [currentTVShow, setCurrentTVShow] = useState();
@@ -71,22 +72,7 @@ export function App() {
         {currentTVShow && <TVShowDetail tvShow={currentTVShow} />}
       </div>
       <div className={style.recommended_shows}>
-        {currentTVShow && (
-          <>
-            <TVShowListItem
-              onClick={setCurrentTVShowFromRecommendation}
-              tvShow={currentTVShow}
-            />
-            <TVShowListItem
-              onClick={setCurrentTVShowFromRecommendation}
-              tvShow={currentTVShow}
-            />
-            <TVShowListItem
-              onClick={setCurrentTVShowFromRecommendation}
-              tvShow={currentTVShow}
-            />
-          </>
-        )}
+        {currentTVShow && <TVShowList/>}
       </div>
     </div>
   );
