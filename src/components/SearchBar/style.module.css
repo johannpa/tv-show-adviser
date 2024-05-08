@@ -13,4 +13,14 @@
     width: 100%;
     border-color: transparent;
     padding: 18px 18px 18px 50px;
+    color: white;
+}
+
+.input::placeholder {
+    color: rgb(194, 194, 194);
+}
+
+.input:focus{
+    outline-width: 0px;
+    border: solid 1px white;
 }
