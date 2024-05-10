@@ -53,9 +53,13 @@ export function App() {
   // }
 
   async function searchTVShow(tvShowName) {
-    const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
-    if (searchResponse.length > 0) {
-      setCurrentTVShow(searchResponse[0]);
+    try {
+        const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
+        if (searchResponse.length > 0) {
+          setCurrentTVShow(searchResponse[0]);
+      }
+    } catch (error) {
+      alert("Erreur durant la recherche de la série");
     }
   }
 
