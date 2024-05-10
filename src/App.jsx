@@ -17,9 +17,13 @@ export function App() {
   
 
   async function fetchPopulars() {
-    const populars = await TVShowAPI.fetchPopulars();
-    if (populars.length > 0) {
-      setCurrentTVShow(populars[0]);
+    try {
+      const populars = await TVShowAPI.fetchPopulars();
+      if (populars.length > 0) {
+        setCurrentTVShow(populars[0]);
+      }
+    } catch (error) {
+      alert("Erreur durant la rechercher des séries populaires")
     }
   }
 
