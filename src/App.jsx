@@ -6,7 +6,7 @@ import { BACKDROP_BASE_URL } from "./api/config";
 import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail";
 import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png";
-import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
+// import { TVShowListItem } from "./components/TVShowListItem/TVShowListItem";
 import { TVShowList } from "./components/TVShowList/TVShowList";
 import { SearchBar } from "./components/SearchBar/SearchBar";
 
@@ -40,12 +40,15 @@ export function App() {
     }
   }, [currentTVShow]);
 
-  function setCurrentTVShowFromRecommendation(tvShow){
-    alert(JSON.stringify(tvShow));
-  }
+  // function setCurrentTVShowFromRecommendation(tvShow){
+  //   alert(JSON.stringify(tvShow));
+  // }
 
-  function searchTVShow(tvShowName){
-
+  async function searchTVShow(tvShowName) {
+    const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
+    if (searchResponse.length > 0) {
+      setCurrentTVShow(searchResponse[0]);
+    }
   }
 
   return (
