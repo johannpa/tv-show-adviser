@@ -44,7 +44,9 @@ export function App() {
     alert(JSON.stringify(tvShow));
   }
 
-  console.log("***", recommendationList);
+  function searchTVShow(tvShowName){
+
+  }
 
   return (
     <div
@@ -65,7 +67,7 @@ export function App() {
             />
           </div>
           <div className="col-sm-12 col-md-4">
-            <SearchBar />
+            <SearchBar onSubmit={searchTVShow}/>
           </div>
         </div>
       </div>
