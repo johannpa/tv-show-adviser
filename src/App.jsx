@@ -23,14 +23,18 @@ export function App() {
         setCurrentTVShow(populars[0]);
       }
     } catch (error) {
-      alert("Erreur durant la rechercher des séries populaires")
+      alert("Erreur durant la recherche des séries populaires")
     }
   }
 
   async function fetchRecommendations(tvShowId) {
-    const recommendations = await TVShowAPI.fetchRecommendations(tvShowId);
-    if (recommendations.length > 0) {
-      setRecommendationList(recommendations.slice(0, 10));
+    try {
+      const recommendations = await TVShowAPI.fetchRecommendations(tvShowId);
+      if (recommendations.length > 0) {
+        setRecommendationList(recommendations.slice(0, 10));
+      }
+    } catch (error) {
+      alert("Erreur durant la recherche de recommendations")
     }
   }
 
